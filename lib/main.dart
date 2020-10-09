@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart' ;
 import 'package:flutter/services.dart';
+import 'package:quiz_app/sign.dart';
 import 'dart:async';
 import 'quizPage.dart';
+
 void main(){
   SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.portraitUp]);
   runApp(new MyApp());
@@ -11,9 +13,10 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
   return new MaterialApp(
+
     theme: ThemeData(primaryColor: Colors.blue, accentColor: Colors.white),
     debugShowCheckedModeBanner: false,
-    home: new StartPage(),
+    home: SignIn(),
   );
   }
 }
