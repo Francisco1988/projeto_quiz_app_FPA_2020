@@ -30,7 +30,7 @@ class _SignUpState extends State<SignUp> {
           _isLoading =false;
         });
         Navigator.pushReplacement(context, MaterialPageRoute(
-          builder: (context)=> Home()
+          builder: (context)=> SignIn()
             ));
           }
         });
@@ -41,9 +41,9 @@ class _SignUpState extends State<SignUp> {
     Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: appBar(context),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
+        title: Text('Quiz_app Cadastro'),
+        centerTitle:true,
+        backgroundColor: Colors.deepPurple,
       ),
       body: _isLoading ? Container (
         child: Center(child: CircularProgressIndicator(),),
@@ -54,7 +54,6 @@ class _SignUpState extends State<SignUp> {
           child: Column (
             children: [
               Spacer(),
-
               TextFormField(
                 validator: (val){return val.isEmpty ? "Entre com o nome": null;},
                 decoration: InputDecoration(
@@ -86,37 +85,37 @@ class _SignUpState extends State<SignUp> {
                   senha=val;
                 },
               ),
-              SizedBox(height: 2,),
+              SizedBox(height: 20,),
               GestureDetector(
                 onTap: (){
                   signUp();
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 12),
+                  padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                      color: Colors.blue, borderRadius: BorderRadius.circular(10)
+                      color: Colors.deepPurple, borderRadius: BorderRadius.circular(10)
                   ),
                   alignment: Alignment.center,
                   width: MediaQuery.of(context).size.width -10,
-                  child: Text ("Sign up", style: TextStyle(color: Colors.white, fontSize: 16),),
+                  child: Text ("Sign up", style: TextStyle(color: Colors.white, fontSize: 20),),
 
                 ),
               ),
-              SizedBox(height: 2,),
+              SizedBox(height: 15,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("já tem uma conta? ", style: TextStyle(fontSize: 15),),
+                  Text("já tem uma conta? ", style: TextStyle(fontSize: 20),),
                   GestureDetector(
                     onTap: (){
                       Navigator.pushReplacement(context, MaterialPageRoute(
                           builder:(context) => SignIn()
                       ));
                     },
-                      child: Text("Sign In", style: TextStyle(fontSize: 15, decoration: TextDecoration.underline),))
+                      child: Text("Sign In", style: TextStyle(fontSize: 20, decoration: TextDecoration.underline),))
                 ],
               ),
-              SizedBox(height: 2)
+              SizedBox(height: 10)
 
             ],),
         ),

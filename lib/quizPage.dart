@@ -14,7 +14,6 @@ class QuizPage extends StatefulWidget{
 
 }
 
-
 class _QuizPageState extends State<QuizPage>{
 
   _QuizPageState(){
@@ -22,11 +21,12 @@ class _QuizPageState extends State<QuizPage>{
   }
   Question _currentQuestion;
   QuestionList _quizQuestions = new QuestionList([
-    new Question("Quais os fundamentos da POO?", "Apenas Herança e Polimorfismo","Encapsulamento e Polimorfismo, apenas","Abstração e Polimorfismo, mas não a Herança","Herança, Encapsulamento e Polimorfismo","D"),
+    new Question("Conceito que serve para controlar o acesso aos atributos e métodos de uma classe", "Herança","Encapsulamento ","Abstração", "Polimorfismo","B"),
     new Question("O que caracteriza um objeto?", "A classe","O método","Seus atributos","Outro objeto","C"),
     new Question("Qual a primeira linguagem a usar conceitos de OO", "Java","Pyton","Cobol","Simula","D"),
     new Question("Quem é considerado o 'pai' da Programação Orientada a Objetos?", "Alan Kay","Alan Turing","Steve Jobs","James Gosling","A"),
-    new Question("Conceito de OO que permite que classes mais especializadas reaproveitem comportamentos de uma classe generalista", "Interface","Abstração","Polimorfismo","Herança","D"),
+    new Question("Conceito de OO que traz Generalização/Especialização", "Interface","Abstração","Polimorfismo","Herança","D"),
+    new Question("Qual modificador de acesso recomendado para atributos de uma classe?", "public", "default", "private", "protected", "C"),
   ]);
 
   int _questionNumber = 0;
@@ -42,7 +42,7 @@ class _QuizPageState extends State<QuizPage>{
 
   void choiceHandler (String choice){
     if (_questionNumber == _quizQuestions.length){
-      Timer(Duration(seconds: 3), ()=> this.setState(() {
+      Timer(Duration(seconds: 1), ()=> this.setState(() {
         Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> new ScorePage(_score, _quizQuestions.length)));
       }));
     }
@@ -92,7 +92,6 @@ class _QuizPageState extends State<QuizPage>{
             Center(
               child: Container(
                 color: new Color(0x476879ff),
-                width: double.infinity,
                 padding: new EdgeInsets.all(6.0),
                 child: Center(
                   child: Text("PERGUNTA " + _questionNumber.toString(), style: new TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),),

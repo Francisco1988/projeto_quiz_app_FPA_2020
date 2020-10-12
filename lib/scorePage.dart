@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/sign.dart';
 import 'main.dart';
 
 class ScorePage extends StatelessWidget{
@@ -18,9 +19,23 @@ class ScorePage extends StatelessWidget{
           new Text(_score.toString() + "/" + _totalQuestion.toString(), style: TextStyle(color: Colors.blue, fontSize:30.0,fontWeight: FontWeight.bold),),
           new IconButton(
               icon: new Icon(
-                  Icons.refresh), iconSize: 80.0, color: Colors.blue,
-                  onPressed: ()=> Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context)=> new StartPage()), (Route route) => route = null),
-          )
+                  Icons.refresh), iconSize: 40.0, color: Colors.blue,
+              onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> new StartPage())
+              )),
+          Text("Jogar novamente", style: TextStyle(fontSize: 20),),
+          Padding(
+            padding: EdgeInsets.only(top: 40.0),
+          ),
+          new IconButton(icon: new Icon(Icons.exit_to_app),iconSize: 40.0, color: Colors.blue,
+
+              onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> new SignIn())
+              )),
+          Text("Sair", style: TextStyle(fontSize: 20),),
+
+          //new IconButton(icon: new Icon(Icons.exit_to_app),iconSize: 80.0, color: Colors.blue,
+
+             // onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> new SignIn())
+           //   )),
         ],
       )
     );
