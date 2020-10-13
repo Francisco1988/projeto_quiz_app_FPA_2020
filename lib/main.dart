@@ -58,7 +58,7 @@ class _StartPageState extends State <StartPage>{
                      width: 200.0,
                      height: 200.0,
                      decoration: BoxDecoration(
-                         image: new DecorationImage(image: AssetImage('assets/BG12.png'))),
+                         image: new DecorationImage(image: AssetImage('assets/LOGO-01.png'))),
                    ),
                    Padding(
                      padding: EdgeInsets.only(top: 30.0),

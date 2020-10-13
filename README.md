@@ -26,7 +26,7 @@ solicitando que o usuário entre com os valores para os devidos campos.
 
 ## Tela Carregamento
 
-Tela criada para apresentar uma barra de progresso e as assets/images (backgraund e logo java que remete ao conteudo do quiz).
+Tela criada para apresentar uma barra de progresso e as assets/images (backgraund e logo do app quiz).
 
 ![tela carregamento](https://user-images.githubusercontent.com/28979812/95824144-2a438e00-0d05-11eb-88d4-ad7fdc344b4e.png)
 
