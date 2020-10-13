@@ -35,7 +35,6 @@ class _SignInState extends State<SignIn> {
       });
     }
  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +42,7 @@ class _SignInState extends State<SignIn> {
         title: Text('Quiz_app'),
         centerTitle:true,
         backgroundColor: Colors.deepPurple,
+        leading: new Container(),
       ),
       body: _isLoading ? Container(
         child: Center(
@@ -106,7 +106,7 @@ class _SignInState extends State<SignIn> {
                       child: Text("Sign Up", style: TextStyle(fontSize: 20, decoration: TextDecoration.underline),))
                 ],
               ),
-              SizedBox(height: 13)
+              SizedBox(height: 2)
 
           ],),
         ),

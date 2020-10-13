@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/sign.dart';
+import 'package:quiz_app/signup.dart';
 import 'main.dart';
 
 class ScorePage extends StatelessWidget{
@@ -28,7 +29,8 @@ class ScorePage extends StatelessWidget{
           ),
           new IconButton(icon: new Icon(Icons.exit_to_app),iconSize: 40.0, color: Colors.blue,
 
-              onPressed: ()=> Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context)=> new SignIn())
+              onPressed: ()=>  Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder:(context) => SignIn())
               )),
           Text("Sair", style: TextStyle(fontSize: 20),),
 

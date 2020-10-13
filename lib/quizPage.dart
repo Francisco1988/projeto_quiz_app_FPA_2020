@@ -21,12 +21,16 @@ class _QuizPageState extends State<QuizPage>{
   }
   Question _currentQuestion;
   QuestionList _quizQuestions = new QuestionList([
-    new Question("Conceito que serve para controlar o acesso aos atributos e métodos de uma classe", "Herança","Encapsulamento ","Abstração", "Polimorfismo","B"),
+    new Question("Conceito que serve para controlar o acesso aos atributos e métodos de uma classe?", "Herança","Encapsulamento ","Abstração", "Polimorfismo","B"),
     new Question("O que caracteriza um objeto?", "A classe","O método","Seus atributos","Outro objeto","C"),
-    new Question("Qual a primeira linguagem a usar conceitos de OO", "Java","Pyton","Cobol","Simula","D"),
+    new Question("Qual a primeira linguagem a usar conceitos de OO?", "Java","Pyton","Cobol","Simula","D"),
     new Question("Quem é considerado o 'pai' da Programação Orientada a Objetos?", "Alan Kay","Alan Turing","Steve Jobs","James Gosling","A"),
-    new Question("Conceito de OO que traz Generalização/Especialização", "Interface","Abstração","Polimorfismo","Herança","D"),
+    new Question("Conceito de OO que traz Generalização/Especialização:", "Interface","Abstração","Polimorfismo","Herança","D"),
     new Question("Qual modificador de acesso recomendado para atributos de uma classe?", "public", "default", "private", "protected", "C"),
+    new Question("O que é um construtor de uma classe?", "É uma operação que cria um objeto", "É uma operação que cria uma classe", "É uma operação que cria um Atributo", "É uma operação que cria um Método", "A"),
+    new Question("Atributo ou método de um objeto dessa classe poderá ser acessado apenas por objetos de classes que sejam derivadas da mesma.", "public", "default", "private", "protected", "D"),
+    new Question("Nome da máquina virtual Java:", "JRE", "JDK", "JSON", "JVM", "D"),
+    new Question("Palavra chave em Java para uma classe filha herdar de uma classe pai:", "this", "implements", "extends", "super", "C"),
   ]);
 
   int _questionNumber = 0;
@@ -79,50 +83,52 @@ class _QuizPageState extends State<QuizPage>{
 
   @override
   Widget build(BuildContext context){
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        new Container(
-          decoration: BoxDecoration(
-            image:new DecorationImage(image: AssetImage('assets/BG1.jpg'), fit: BoxFit.fill),
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Container(
+            decoration: BoxDecoration(
+              image:new DecorationImage(image: AssetImage('assets/BG1.jpg'), fit: BoxFit.fill),
+            ),
           ),
-        ),
-        new Column(
-          children: <Widget>[
-            Center(
-              child: Container(
-                color: new Color(0x476879ff),
-                padding: new EdgeInsets.all(6.0),
-                child: Center(
-                  child: Text("PERGUNTA " + _questionNumber.toString(), style: new TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),),
+          new Column(
+            children: <Widget>[
+              Center(
+                child: Container(
+                  color: new Color(0x476879ff),
+                  padding: new EdgeInsets.all(6.0),
+                  child: Center(
+                    child: Text("PERGUNTA " + _questionNumber.toString(), style: new TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),),
+                  ),
                 ),
               ),
-            ),
 
-            Center(
-              child: new Container(
-                width: double.infinity,
-                decoration: new BoxDecoration(color: Colors.black54),
-                padding: new EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0, bottom: 10),
-                child: Text( _currentQuestion.questionText, style: new TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold),),
+              Center(
+                child: new Container(
+                  width: double.infinity,
+                  decoration: new BoxDecoration(color: Colors.black54),
+                  padding: new EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0, bottom: 10),
+                  child: Text( _currentQuestion.questionText, style: new TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold),),
+                ),
               ),
-            ),
 
-            Padding(
-               padding: EdgeInsets.only(top: 10.0),
-            ),
+              Padding(
+                 padding: EdgeInsets.only(top: 10.0),
+              ),
 
 
-            createQuizQuestion(_currentQuestion),
+              createQuizQuestion(_currentQuestion),
 
-            Padding(
-              padding: EdgeInsets.only(top: 10.0),
-            ),
+              Padding(
+                padding: EdgeInsets.only(top: 10.0),
+              ),
 
-            _overlayVisible? new CustomOverlay(_isCorrect) : new Container(),
-          ],
-        )
-      ],
+              _overlayVisible? new CustomOverlay(_isCorrect) : new Container(),
+            ],
+          )
+        ],
+      ),
     );
   }
 }

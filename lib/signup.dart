@@ -44,82 +44,83 @@ class _SignUpState extends State<SignUp> {
         title: Text('Quiz_app Cadastro'),
         centerTitle:true,
         backgroundColor: Colors.deepPurple,
+        leading: new Container(),
       ),
       body: _isLoading ? Container (
-        child: Center(child: CircularProgressIndicator(),),
-      ) : Form(
-        key: _formKey,
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
-          child: Column (
-            children: [
-              Spacer(),
-              TextFormField(
-                validator: (val){return val.isEmpty ? "Entre com o nome": null;},
-                decoration: InputDecoration(
-                    hintText: "nome"
-                ),
-                onChanged: (val){
-                  nome=val;
-                },
-              ),
-              SizedBox(height: 2,),
-
-              TextFormField(
-                validator: (val){return val.isEmpty ? "Entre com o email correto": null;},
-                decoration: InputDecoration(
-                    hintText: "email"
-                ),
-                onChanged: (val){
-                  email=val;
-                },
-              ),
-              SizedBox(height: 2,),
-              TextFormField(
-                obscureText: true,
-                validator: (val){return val.isEmpty ? "Entre com a senha correta": null;},
-                decoration: InputDecoration(
-                    hintText: "senha"
-                ),
-                onChanged: (val){
-                  senha=val;
-                },
-              ),
-              SizedBox(height: 20,),
-              GestureDetector(
-                onTap: (){
-                  signUp();
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                      color: Colors.deepPurple, borderRadius: BorderRadius.circular(10)
-                  ),
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width -10,
-                  child: Text ("Sign up", style: TextStyle(color: Colors.white, fontSize: 20),),
-
-                ),
-              ),
-              SizedBox(height: 15,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          child: Center(child: CircularProgressIndicator(),),
+        ) : Form(
+          key: _formKey,
+          child: Container(
+           margin: EdgeInsets.symmetric(horizontal: 24),
+             child: Column (
                 children: [
-                  Text("já tem uma conta? ", style: TextStyle(fontSize: 20),),
+                  Spacer(),
+                  TextFormField(
+                    validator: (val){return val.isEmpty ? "Entre com o nome": null;},
+                    decoration: InputDecoration(
+                        hintText: "nome"
+                    ),
+                    onChanged: (val){
+                      nome=val;
+                    },
+                  ),
+                  SizedBox(height: 2,),
+
+                  TextFormField(
+                    validator: (val){return val.isEmpty ? "Entre com o email correto": null;},
+                    decoration: InputDecoration(
+                        hintText: "email"
+                    ),
+                    onChanged: (val){
+                      email=val;
+                    },
+                  ),
+                  SizedBox(height: 2,),
+                  TextFormField(
+                    obscureText: true,
+                    validator: (val){return val.isEmpty ? "Entre com a senha correta": null;},
+                    decoration: InputDecoration(
+                        hintText: "senha"
+                    ),
+                    onChanged: (val){
+                      senha=val;
+                    },
+                  ),
+                  SizedBox(height: 10,),
                   GestureDetector(
                     onTap: (){
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                          builder:(context) => SignIn()
-                      ));
+                      signUp();
                     },
-                      child: Text("Sign In", style: TextStyle(fontSize: 20, decoration: TextDecoration.underline),))
-                ],
-              ),
-              SizedBox(height: 10)
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.deepPurple, borderRadius: BorderRadius.circular(10)
+                      ),
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width -10,
+                      child: Text ("Sign up", style: TextStyle(color: Colors.white, fontSize: 20),),
 
-            ],),
-        ),
-      ),
+                    ),
+                  ),
+                  SizedBox(height: 8,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("já tem uma conta? ", style: TextStyle(fontSize: 20),),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                              builder:(context) => SignIn()
+                          ));
+                        },
+                          child: Text("Sign In", style: TextStyle(fontSize: 20, decoration: TextDecoration.underline),))
+                    ],
+                  ),
+                  SizedBox(height: 2)
+
+                ],),
+            ),
+          ),
     );
   }
 }
