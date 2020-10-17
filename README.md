@@ -28,7 +28,7 @@ solicitando que o usuário entre com os valores para os devidos campos.
 
 Tela criada para apresentar uma barra de progresso e as assets/images (backgraund e logo do app quiz).
 
-![tela carregamento](https://user-images.githubusercontent.com/28979812/95824144-2a438e00-0d05-11eb-88d4-ad7fdc344b4e.png)
+![tela carregamento 01](https://user-images.githubusercontent.com/28979812/95955231-e323ce80-0dd2-11eb-8da2-b139dd15bb57.png)
 
 
 ## Tela do Quiz (Quiz Page)
